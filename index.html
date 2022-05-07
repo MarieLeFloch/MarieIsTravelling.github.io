@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarieIsTravelling</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav>
+      <div class="header__part">
+        <div class="container">
+          <div class="header__flex">
+            <a class="logo" href="">
+              <img class="logo__image" src="img/favicon.ico" alt="">
+              <span class="logo__title">Marie is travelling</span>
+            </a>
+            <div class="menu">
+              <a class="menu__item menu__item--newsletter" href=""><i class="icon-mail"></i> Newsletter</a>
+              <button id="mode-switch" class="btn" type="button" aria-label="Changement du mode"><i class="icon-moon"></i></button>
+              <div class="menu__color-switcher">
+                <button id="color-blue" class="color-button" type="button" aria-label="Changement de couleur"></button>
+                <button id="color-green" class="color-button" type="button" aria-label="Changement de couleur"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__part">
+        <div class="container">
+          <div class="submenu">
+            <a class="submenu__item submenu__item--current" href="">Home</a>
+            <a class="submenu__item" href="">Europe</a>
+            <a class="submenu__item" href="">Africa</a>
+            <a class="submenu__item" href="">Asia</a>
+            <a class="submenu__item" href="">America</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <!-- Main -->
+
+  <main class="container">
+    <div class="content">
+
+      <p class="presentation">Hi! I'm glad to share with you some of the trips I have done abroad. First, let's have a look to ... </p>
+
+      <h1 class="content__title" id="title_H1">My favorites places ♥</h1>
+
+      <section class="slider">
+        
+        <button class="btn slider__btn" type="button" aria-label="Précédent">&lt;</button>
+        
+        <button class="btn slider__btn" type="button" aria-label="Suivant">&gt;</button>
+      </section>
+
+      <section class="segment">
+        <h2 class="segment__title">My trips</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card__content">
+              <img class="card__image" src="img/colomb1.jpg" alt="">
+              <h3 class="card__title">Colombia</h3>
+              <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, minima!</p>
+            </div>
+            <div class="card__action">
+              <button class="btn btn__more" type="button" aria-label="See more">See more</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__content">
+              <img class="card__image" src="img/maroc1.jpg" alt="">
+              <h3 class="card__title">Morrocco</h3>
+              <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, minima!</p>
+            </div>
+            <div class="card__action">
+              <button class="btn btn__more" type="button" aria-label="See more">See more</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__content">
+              <img class="card__image" src="img/thailand1.jpg" alt="">
+              <h3 class="card__title">Promenade dans la nature</h3>
+              <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, minima!</p>
+            </div>
+            <div class="card__action">
+              <button class="btn btn__more" type="button" aria-label="See more">See more</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__content">
+              <img class="card__image" src="img/inde3.jpg" alt="">
+              <h3 class="card__title">Partir à la mer</h3>
+              <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, minima!</p>
+            </div>
+            <div class="card__action">
+              <button class="btn btn__more" type="button" aria-label="See more">See more</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__content">
+              <img class="card__image" src="img/grece1.jpg" alt="">
+              <h3 class="card__title">Road trip</h3>
+              <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, minima!</p>
+            </div>
+            <div class="card__action">
+              <button class="btn btn__more" type="button" aria-label="See more">See more</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__content">
+              <img class="card__image" src="img/senegal2.JPG" alt="">
+              <h3 class="card__title">Partir à la montagne</h3>
+              <p class="card__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, minima!</p>
+            </div>
+            <div class="card__action">
+              <button class="btn btn__more" type="button" aria-label="See more">See more</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <aside class="newsletter">
+    <button class="newsletter__close btn" aria-label="Fermer" type="button">&Cross;</button>
+    <h2 class="newsletter__title">Suscribe to the newsletter</h2>
+    <form action="" method="post" class="newsletter__form">
+      <input class="newsletter__field" type="email" required id="subscriber-email" placeholder="user@email.com" aria-label="Votre email">
+      <button class="btn" type="submit">Valider</button>
+    </form>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>This website has been done from an o'clock's project's model</p>
+    </div>
+  </footer>
+
+  
+
+  <!-- on inclus les fichiers script.js qui vont contenir tout notre code JS -->
+  <script src="js/newsletter.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/color.js"></script>
+  <script src="js/messages.js"></script>
+  <script src="js/trips.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
