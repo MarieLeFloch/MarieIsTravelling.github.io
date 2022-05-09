@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarieIsTravelling</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/bc0b65ddeb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav>
+      <div class="header__part">
+        <div class="container">
+          <div class="header__flex">
+            <a class="logo" href="">
+              <img class="logo__image" src="img/favicon.ico" alt="">
+              <span class="logo__title">Marie is travelling</span>
+            </a>
+            <div class="menu">
+              <a class="menu__item menu__item--newsletter" href=""><i class="icon-mail"></i> Newsletter</a>
+              <button id="mode-switch" class="btn" type="button" aria-label="Changement du mode"><i class="icon-moon"></i></button>
+              <div class="menu__color-switcher">
+                <button id="color-blue" class="color-button" type="button" aria-label="Changement de couleur"></button>
+                <button id="color-green" class="color-button" type="button" aria-label="Changement de couleur"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__part">
+        <div class="container">
+          <div class="submenu">
+            <a class="submenu__item" href="index.html">Home</a>
+            <a class="submenu__item" href="">Europe</a>
+            <a class="submenu__item" href="">Africa</a>
+            <a class="submenu__item" href="">Asia</a>
+            <a class="submenu__item" href="">America</a>
+            <a class="submenu__item submenu__item--current" href="about.html">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <!-- Main -->
+
+  <main class="container">
+    <div class="content">
+
+      <div class="card__about">
+        <div class="card-body">
+          <h2 class="card__title">Who am I ?</h2>
+          <p class="about__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci doloremque a corporis quam atque commodi quod inventore eius debitis voluptatem. Voluptates explicabo, facilis minima fugit voluptatum autem cum neque velit.</p>
+        </div>
+        <img src="img/me2.jpg" class="card-img-bottom" alt="...">
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <aside class="newsletter">
+    <button class="newsletter__close btn" aria-label="Fermer" type="button">&Cross;</button>
+    <h2 class="newsletter__title">Suscribe to the newsletter</h2>
+    <form action="" method="post" class="newsletter__form">
+      <input class="newsletter__field" type="email" required id="subscriber-email" placeholder="user@email.com" aria-label="Votre email">
+      <button class="btn" type="submit">Confirm</button>
+    </form>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <a href="https://marielefloch.github.io/" class = "social__link">&#127760; My resumee</a>
+      <p>This website has been done from a project's template of O'clock</p>
+    </div>
+  </footer>
+
+  
+
+  <!-- on inclus les fichiers script.js qui vont contenir tout notre code JS -->
+  <script src="js/newsletter.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/color.js"></script>
+  <script src="js/messages.js"></script>
+  <script src="js/trips.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
