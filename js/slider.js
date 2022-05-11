@@ -152,7 +152,7 @@ const slider = {
 
     loadImages: function () {
         // fonction qui va inserer dans le DOM des images pour le slider
-        const sliderImages = ["colomb1.jpg", "maroc1.jpg", "thailand1.jpg", "grece1.jpg"];
+        const sliderImages = ["colombie1.jpg", "maroc1.jpg", "thailand1.jpg", "grece1.jpg"];
         
         //! title
         // const sliderTitles = ["Colombia, 2020", "Morroco, 2018", "Thailand, 2017", "Greece, 2016"]
