@@ -5,9 +5,9 @@ const slider = {
     // Et préparer un tableau qui contiendra les différentes images
 
     currentImg: 0,
-    // currentTitle: 0,
+    currentTitle: 0,
     imgList: [],
-    // titleList: [],
+    titleList: [],
 
     init: function () {
         // On va récupérer les images
@@ -16,8 +16,8 @@ const slider = {
         // On enregistre dans le tableau les éléments contenant les images
         slider.imgList = document.querySelectorAll(".slider__img");
         
-        //! TITLES
-        // slider.textList = document.querySelectorAll(".slider__title");
+        // On enregistre dans le tableau les éléments crées dans loadImagescontenant les titres
+        slider.textList = document.querySelectorAll(".slider__title");
 
         // On place des ecouteurs d'evenement sur les flèches precedant / suivant, 2 éléments 0->previous, 1->suivant
         const arrowBtnList = document.querySelectorAll(".slider__btn");
@@ -62,7 +62,7 @@ const slider = {
 
         // Si l'image courante = 0
         if (slider.currentImg === 0) {
-            // L'image qui la précéde est égale à la longueur du tableau -1, soit index : 2  (imgList : [0, 1, 2])
+            // L'image qui la précéde est égale à la longueur du tableau -1, soit index : 2  (imgList : [0, 1, 2, 3])
             previousImgNumber = slider.imgList.length - 1;
         }
         //  Si on n'est pas sur l'image 0, on est sur la 1 ou la 2, dans ce cas
@@ -74,21 +74,6 @@ const slider = {
         // on appelle goToSlide avec le numéro de la slide précédante en param
         slider.goToSlide(previousImgNumber);
 
-        // //! TITLES
-        // let previousTitleNumber;
-        //         // Si l'image courante = 0
-        // if (slider.currentTitle === 0) {
-        //     // L'image qui la précéde est égale à la longueur du tableau -1, soit index : 2  (imgList [0, 1, 2])
-        //     previousTitleNumber = slider.titleList.length - 1;
-        // }
-        // //  Si on n'est pas sur l'image 0, on est sur la 1 ou la 2, dans ce cas
-        // else {
-        //     // On veut aller à l'image courante -1
-        //     previousTitleNumber = slider.currentTitle - 1;
-        // }
-
-        // // on appelle goToSlide avec le numéro de la slide précédante en param
-        // slider.goToSlide(previousTitleNumber);
     },
 
 
@@ -110,24 +95,7 @@ const slider = {
         // on appelle goToSlide avec le numéro de la slide suivante en param
         slider.goToSlide(nextImgNumber);
     
-
-    // //! TITLES
-    //     let nextitleNumber;
-    //     // Si l'image courante = 2, soit la dernière -1
-    //     if (slider.currentImg === slider.titleList.length-1) {
-    //         // L'image qui suit sera la 0
-    //         nextitleNumber = 0;
-    //     }
-    //     //  Sinon
-    //     else {
-    //         // On veut aller à l'image courante +1
-    //         nextitleNumber = slider.currentTitle + 1;
-    //     }
-
-    //     // on appelle goToSlide avec le numéro de la slide suivante en param
-    //     slider.goToSlide(nextitleNumber);
-        },
-    
+    },
 
     goToSlide: function (nextImgNumber) {
         // et va chercher la slide dont le numéro est passé en paramètre et lui ajoute la classe courante
@@ -148,20 +116,35 @@ const slider = {
         // on met à jour la propriété qui stocke l'image courante
         // maintenant la nouvelle image courante est celle dont le num est passé en paramètre
         slider.currentImg = nextImgNumber;
+
+
+        // idem avec le titre
+        const currentTitle = slider.textList[slider.currentTitle];
+        currentTitle.classList.remove("slider__title--current");
+        const nextTitle = slider.textList[nextImgNumber];
+        nextTitle.classList.add("slider__title--current");
+        slider.currentTitle = nextImgNumber;
+
     },
 
     loadImages: function () {
         // fonction qui va inserer dans le DOM des images pour le slider
-        const sliderImages = ["colombie1.jpg", "maroc1.jpg", "thailand1.jpg", "grece1.jpg"];
+        const sliderImages = [
+            "colombie1.jpg", 
+            "maroc1.jpg", 
+            "thailand1.jpg", 
+            "grece1.jpg"
+        ];
         
-        //! title
-        // const sliderTitles = ["Colombia, 2020", "Morroco, 2018", "Thailand, 2017", "Greece, 2016"]
+         const sliderTitles = 
+         ["Colombia",
+          "Morocco", 
+          "Thailand", 
+          "Greece"
+        ];
         
         // 1 - selectionner l'element slider qui sera le parent dans lequel on va inserer les images
         const sliderElmt = document.querySelector(".slider");
-
-        //! title
-        // const sliderTitleElmt = document.querySelector(".slider__title");
 
         // 2 - BOUCLE : pour chaque element du tableau  :
         for (const image of sliderImages) {
@@ -178,26 +161,31 @@ const slider = {
             sliderElmt.prepend(imgElmt);
         }
 
-        // //! title
-        // for (const title of sliderTitles) {
+         for (const title of sliderTitles) {
             
-        //     // creer un element img : createElement
-        //     let titleElmt = document.createElement("p");
+             // creer un element img : createElement
+             let titleElmt = document.createElement("p");
 
-        //     // lui ajouter une class : classList / className
-        //     titleElmt.classList.add("slider__title");
+             // lui ajouter une class : classList / className
+             titleElmt.classList.add("slider__title");
 
-        //     // lui ajouter une url d'image src : .src
-        //     titleElmt.content = title;
+             // lui ajouter une url d'image src : .src
+             titleElmt.textContent = title;
 
-        //     // ajouter l'element image dans le parent slider : appendChild ou prepend
-        //     sliderTitleElmt.prepend(titleElmt);
-        // }
+             // ajouter l'element image dans le parent slider : appendChild ou prepend
+             sliderElmt.prepend(titleElmt);
+         }
 
 
         // on va aller chercher la premiere image avec querySelector
         // on lui ajoute la classe current
         const firstImage = document.querySelector(".slider__img");
         firstImage.classList.add("slider__img--current");
+
+
+        // on va aller chercher le premier titre avec querySelector
+        // on lui ajoute la classe current
+        const firstTitle = document.querySelector(".slider__title");
+        firstTitle.classList.add("slider__title--current");
     },
 };

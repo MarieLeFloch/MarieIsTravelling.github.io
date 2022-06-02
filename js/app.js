@@ -5,10 +5,14 @@ const app = {
     init: function () {
         //* Le module gérant les couleurs : dark / light et bleu / vert
         color.init();
-        //* Le module gérant le slider
-        slider.init();
         //* Le module gérant la newsletter
         newsletter.init();
+        //* Le module gérant le slider
+        // On ne le charge que s'il y a un slider dans la page courante
+        let sliderExists = document.querySelector(".slider");
+        if (sliderExists){
+            slider.init();
+        }
         //* Le module gérant les articles (qui fait lui même appel au module messages)
         trips.init();
     },

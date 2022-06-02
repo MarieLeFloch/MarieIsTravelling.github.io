@@ -4,90 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MarieIsTravelling</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <script src="https://kit.fontawesome.com/bc0b65ddeb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
 <body>
   <!-- Header -->
-  <header class="header">
-    <nav>
-      <div class="header__part">
-        <div class="container">
-          <div class="header__flex">
-            <a class="logo" href="">
-              <img class="logo__image" src="img/favicon.ico" alt="">
-              <span class="logo__title">Marie is travelling</span>
-            </a>
-            <div class="menu">
-              <a class="menu__item--newsletter" href=""><i class="icon-mail"></i> Newsletter</a>
-              <button id="mode-switch" class="btn" type="button" aria-label="Changement du mode"><i class="icon-moon"></i></button>
-              <div class="menu__color-switcher">
-                <button id="color-blue" class="color-button" type="button" aria-label="Changement de couleur"></button>
-                <button id="color-green" class="color-button" type="button" aria-label="Changement de couleur"></button>
-              </div>         
-            </div>
-          </div>
+  <header>
+    <div class="first__header__part">
+      <div class="first__menu__flex">
+        <nav class="first__menu__nav">
+          <a class="first__menu__item menu__item--newsletter" href=""><i class="bi bi-envelope"></i>
+            Newsletter</a>
+        </nav>
+        <div class="menu__color">
+          <button id="first-color" class="color-button" type="button"></button>
+          <button id="second-color" class="color-button" type="button"></button>
+          <button id="mode-switch" class="button" type="button">
+            <i class="switch-icon bi bi-lightbulb"></i>
+          </button>
         </div>
       </div>
-      <div class="header__part">
-        <div class="container">
-          <div class="submenu">
-            <a class="submenu__item" href="index.html">Home</a>
-            <a class="submenu__item" href="">Europe</a>
-            <a class="submenu__item" href="">Africa</a>
-            <a class="submenu__item" href="">Asia</a>
-            <a class="submenu__item" href="">America</a>
-            <a class="submenu__item submenu__item--current" href="about.html">About</a>
-          </div>
-        </div>
+      <div class="logo__part">
+        <img class="logo__image__black logo--on" src="img/logo.png" alt="">
+        <img class="logo__image__white logo--off" src="img/logo-white.png" alt="">
       </div>
-    </nav>
+    </div>
+
+
+    <div class="second__header__part">
+      <div class="second__menu">
+        <nav>
+          <a class="second__menu__item" href="index.html">Home</a>
+          <a class="second__menu__item" href="">Destinations</a>
+          <a class="second__menu__item" href="">Hikes</a>
+          <a class="second__menu__item" href="">Tips</a>
+          <a class="second__menu__item current--menu" href="about.html">About</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
     <!-- Main -->
 
-  <main class="container">
+  <main>
     <div class="content">
 
       <div class="card__about">
-        <div class="card-body">
-          <h2 class="card__title">Who am I ?</h2>
-          <p class="about__desc">My name is Marie, I live in Rennes (France). Having always wanted to travel and discover other cultures, landscapes, ways of life, as soon as I had some savings, I used it to go abroad. I started to go to some places in Europe like Baleares and Canaries in Spain and then I went to other continents. I particularly enjoyed my experiences in Thailandia, and more recently, in Colombia. What I love with trips are meeting people from everywhere, face the unknown, live day by day and relativise my own culture and habits. </p>
+        <div class="card__image__container">
+          <img src="img/me.jpg" class="card__image__element" alt="...">
+          <p class = "legende"> Bogota (Colombia), 2018</p>
         </div>
-        <img src="img/me.jpg" class="card-img-bottom" alt="...">
-        <p class = "legende"> Bogota (Colombia), 2018</p>
+        <div class="card__body">
+          <h2 class="about__title">Who am I ?</h2>
+          <p class="about__desc">Hello ! I'm Marie from France (Rennes), happy to see you there <i class="bi bi-emoji-smile"></i> 
+          <br><br>Having always wanted to travel and <span class="text-bold">discover other cultures, landscapes, ways of life</span>, as soon as I had some savings, I used it to go abroad. 
+          <br><br>I started to go to some places in Europe like Baleares and Canaries in Spain and then I went to other continents. I particularly enjoyed my experiences in <span class="text-bold">Thailand</span>, and more recently, in <span class="text-bold">Colombia</span>. 
+          <br><br>What I love with trips are <span class="text-bold">meeting people from everywhere, face the unknown, live day by day and relativise my own culture and habits</span>. </p>
+        </div>
       </div>
 
+
+      <h2 class="main__part__title"> Follow me </h2>
+      <div class="social__medias">
+        <a class="social__medias__link" href="https://www.linkedin.com/in/mlefloch/"><i class="bi bi-linkedin"></i></a>
+        <a class="social__medias__link" href="https://marielefloch.github.io/"><i class="bi bi-globe"></i></a>
+        <a class="social__medias__link" href="https://github.com/MarieLeFloch/MarieLeFloch"><i class="bi bi-github"></i></a>
+      </div>
+
+  
     </div>
+
   </main>
 
   <!-- Newsletter -->
   <aside class="newsletter">
-    <button class="newsletter__close btn" aria-label="Fermer" type="button">&Cross;</button>
-    <h2 class="newsletter__title">Suscribe to the newsletter</h2>
+    <button class="newsletter__close button" aria-label="Fermer" type="button"><i class="bi bi-x"></i></button>
+    <p class="newsletter__text">Stay informed of my latest adventures</p>
+    <h2 class="newsletter__title"><i class="bi bi-envelope"></i> Suscribe to the newsletter</h2>
     <form action="" method="post" class="newsletter__form">
-      <input class="newsletter__field" type="email" required id="subscriber-email" placeholder="user@email.com" aria-label="Votre email">
-      <button class="btn" type="submit">Confirm</button>
+      <input class="newsletter__field" type="email" placeholder="user@email.com">
+      <button class="button tn btn__newsletter" type="submit">Confirm</button>
     </form>
   </aside>
 
+
+
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <a href="https://marielefloch.github.io/" class = "social__link">&#127760; My resumee</a>
-      <p>This website has been done from a project's template of O'clock</p>
-    </div>
+      <p>Copyrigth © 2022 | Marie Le Floch</p>
   </footer>
 
   
 
   <!-- on inclus les fichiers script.js qui vont contenir tout notre code JS -->
   <script src="js/newsletter.js"></script>
-  <script src="js/slider.js"></script>
   <script src="js/color.js"></script>
   <script src="js/messages.js"></script>
   <script src="js/trips.js"></script>

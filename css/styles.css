@@ -1,399 +1,440 @@
 html {
-  /* On définit des variables pour stocker les couleurs qu'on va réutiliser plusieurs fois, avec une version plus foncée pour le survol*/
-
-  --blue-basic: #88c9f9;
-  --blue-dark: #63b8f5;
-  --green-basic: #5c913b;
-  --green-dark: #498821;
-
-  /* On enregistre le bleu comme notre couleur par défaut */
-  --color-basic: var(--blue-basic);
-  --color-dark: var(--blue-dark);
-
-  /* On enregistre le style de bordure du site */
-  --border-normal: 1px solid rgba(0, 0, 0, .2);
-
-  /* Newsletter */
-  --color-bg: rgba(248, 248, 248, 0.842); 
-  --color-opacity: rgba(192, 192, 192, 0.1);
-}
-
-body {
-  font-family: 'Gill Sans', sans-serif;
-  transition: background-color .3s; /* Instaure une petite transition pour la mise en place de la couleur de fond */
-}
-
-/* Dès qu'on survol un lien, on le passe en foncé*/
-a:hover {
-  color: var(--color-dark);
-}
-
-/* Text */
-p, h3, h2 {
-  line-height: 1.3;
-  text-align: center;
-}
-
-/* Contenu principal */
-.container {
-  width: 98%;
-  max-width: 70em;
-  margin: 0 auto; /*On centre le contenu */
-}
-
-/* boutons slider + articles */
-.btn {
-  background-color: var(--color-basic);
-  border: 0;
-  border-radius: 3px;
-  color: white;
-  padding: 0.5rem;
-  display: inline-block;
-  font-weight: bold;
-}
-
-/* Au survol les boutons foncent */
-.btn:hover, .btn:focus {
-  background-color: var(--color-dark);
-  color: white;
-}
-
-/* Message crée via le module messages - Bouton"see more" */
-.message {
-  padding: 1rem;
-  border-radius: 3px;
-  background-color: rgb(187, 223, 255);
-  color:rgb(48, 48, 48);
-  margin-bottom: 1rem;
-}
-
-/***----- Header */
-
-/* Bodure en bas des deux parties du header */
-.header__part {
-  border-bottom: var(--border-normal);
-}
-
-/* Partie supérieure du header */
-/* On passe en flex */
-.header__flex {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Titre du site*/
-.logo {
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  font-size: 1.5em;
-}
-
-/* Logo globe */
-.logo__image {
-  margin-right: 0.5rem;
-  width:0.92em;
-}
-
-/* Menu de la partie supérieure du header */
-.menu {
-  display: flex;
-  align-items: center; /* On aligne verticalement les liens du menu*/
-}
-
-/* Boutons de couleur du menu */
-.color-button {
-  border: 0;
-  border-radius: 50%;
-  color: white;
-  padding: 0.7rem;
-  display: inline-block;
-  margin-left: 0.3rem;
-}
-.menu__color-switcher {
-  margin-left: 0.7rem;
-}
-
-/* Boutons changement couleur */
-/* Gestion des couleurs */
-/* On récupère les variables définies plus haut*/
-#color-blue {
-  background-color: var(--blue-basic);
-}
-#color-green {
-  background-color: var(--green-basic);
-}
-
-/* Au survol, on met les couleurs plus foncées*/
-#color-blue:hover {
-  background-color: var(--blue-dark);
-}
-#color-green:hover {
-  background-color: var(--green-dark);
-}
-
-/* Lien nav newsletter */
-.menu__item--newsletter {
-  margin-right: 1rem;;
-}
-
-/* Nav partie inférieure header */
-.submenu {
-  text-align: center;
-  color: #666;
-}
-
-.submenu__item {
-  padding: 1rem 0.5rem; /* On espace chaque onglet */
-  display: inline-block;
-}
-
-/* Ajout d'une bordure sur l'onglet séléctionné*/
-.submenu__item--current {
-  border-bottom: 2px solid #666; 
-  font-weight: bold;
-}
-
-/* Contenu principal de la page */
-.content {
-  padding: 1rem;
-}
-
-/* Titre principal */
-.content__title {
-  font-size: 2em;
-  font-weight: bold;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-/*** Articles container */
-.segment {
-  padding: 1rem;
-  margin: 1rem 0;
-  background-color: var(--color-opacity);
-}
-
-.segment__title {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 1rem;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-/*Articles*/
-.card {
-  padding: 1rem;
-  width: 100%;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-
-.card__title {
-  margin: 0.5rem 0;
-  font-weight: bold;
-}
-
-/*Containers & boutons*/
-.card__action {
-  margin-top: 1rem;
-  text-align: right;
-}
-
-.card__action .btn {
-  margin-right: 0.25rem;
-}
-
-
-/*** slider */
-.slider {
-  position: relative; /*Images à placer par rapport au slider*/
-  height: 25em; /* Portrait */
-  display: flex; /*Centrage espace*/
-  flex-direction: column;
-}
-
-/* A Mettre en place */
-.slider__title{
-  z-index: 2;
-  position: relative;
-  margin-bottom: 10em;
-  padding:0.5em;
-}
-
-.slider__img {
-  position: absolute; /*Element slider*/
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0; /*Non visible si non current*/
-  transition: opacity .5s; /* temps transition */
-}
-
-.slider__img--current {
-  opacity: 1; /* Visible lorsque active*/
-  z-index: 1;
-}
-
-/* Positionnement des boutons du slider*/
-#slider__btns{
-  z-index: 2; /* permet d'être en premier plan */
-  position: relative;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-/*** newletter */
-
-/* Position fixe en bas à droite de l'écran*/
-/* N'est pas affiché lorsque la classe --on est retirée */
-.newsletter {
-  position: fixed;
-  z-index: 9;
-  right:0;
-  bottom: 0;
-  background-color: var(--color-bg);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border: var(--border-normal);
-  padding: 2rem;
-  width: 25em;
-  max-width: 100%;
-  display: none;
-}
-
-/* Affichage de la newsletter*/
-.newsletter--on {
-  display: block;
-  animation: .3s 0s 1 pop;
-}
-
-.newsletter__title {
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.newsletter__field {
-  border: var(--border-normal);
-  padding: 0.25rem;
-  border-radius: 5px;
-}
-
-.newsletter__close {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.newsletter__form{
-  text-align: center;
-}
-
-/* About section */
-.card__about{
-  padding: 1rem;
-  width: 100%;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Description*/
-.about__desc{
-  margin-bottom: 1rem;
-  text-align: justify;
-}
-
-/* Image about section*/
-.card-img-bottom{
-  width: 75%;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-}
-
-.legende{
-  font-size: 0.8em;
-  font-style: italic;
-  text-align: end;
-}
-
-
-/* Footer */
-.footer {
-  background-color: #222;
-  color: #aaa;
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.social__link{
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-.social__link:hover{
-  font-weight: bold;
-  color:white;
-}
-
-/*** dark mode */
-/*Quand on passe au mode dark, on modifie les couleurs des différents éléments du site pour qu'elles soient plus claires*/
-/*On définit de nouvelles variables contenant ces couleurs*/
-.mode-dark, .mode-dark a {
-  color: white;
-  background-color: rgb(53,53,53);
-  --border-normal: 1px solid rgba(255, 255, 255, .2);
-  --color-bg: rgb(15, 15, 15);
-  --color-opacity: rgba(255, 255, 255, .1);
-}
-
-.color-blue {
-  --color-basic: var(--blue-basic);
-  --color-dark: var(--blue-dark);
-}
-.color-green {
-  --color-basic: var(--green-basic);
-  --color-dark: var(--green-dark);
-}
-
-
-/* .theme-dark #theme-switch .icon-moon::before {
-  content: "\e906";
-} */
-
-
-/* responsive */
-@media screen and (min-width: 40em) {
-  .header__flex {
+    /* On définit des variables pour stocker les modes de couleurs, avec une version plus foncée pour le survole etc*/
+    --first-color-basic: #daa172;
+    --first-color-dark: #db9459;
+    --second-color-basic: #59bbbb;
+    --second-color-dark: #3bb3b3;
+  
+    /* On enregistre la first color comme notre couleur par défaut */
+    --color-basic: var(--first-color-basic);
+    --color-dark: var(--first-color-dark);
+    --color-bg: rgba(248, 248, 248, 0.842); /* Newsletter */
+    --color-opacity: rgba(197, 197, 197, 0.1);
+  }
+  
+  body {
+    font-family: 'Gill Sans', sans-serif;
+    transition: background-color .3s; /* Instaure une petite transition pour la mise en place de la couleur de fond */
+  }
+  
+  /* Dès qu'on survole un lien, on le passe en foncé*/
+  a:hover {
+    color: var(--color-dark);
+  }
+  
+  p, h3, h2 {
+    line-height: 1.3;
+    text-align: center;
+  }
+  
+  .button {
+    background-color: var(--color-basic);
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    padding: 0.5rem;
+    display: inline-block;
+  }
+  
+  .btn__more {
+    margin: auto;
+  }
+  
+  /* Au survole les boutons foncent */
+  .button:hover, .button:focus {
+    background-color: var(--color-dark);
+    color: white;
+  }
+  
+  /* Message crée via le module messages - Bouton"see more" */
+  .message {
+    padding: 1rem;
+    border-radius: 3px;
+    background-color: rgb(185, 221, 250);
+    color:rgb(48, 48, 48);
+    margin-top: 1rem;
+  }
+  
+  /*** Header */
+  /* Bordure de la barre de nav*/
+  .first__header__part, .second__header__part {
+    border-bottom: solid 1px var(--color-basic);
+  }
+  
+  .first__menu__flex {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 2em;
+    color:var(--color-dark);
   }
-
-  .card {
-    width: calc((100% - 1rem) / 2);
-  }
+  
+  .logo--off{
+    display:none;
 }
 
-@media screen and (min-width: 60em) {
-  .card {
-    width: calc((100% - 2rem) / 3);
+  .logo--on{
+      display:block;
+      margin: auto;
   }
-}
+
+  .menu__color {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+    .color-button {
+    border: 0;
+    border-radius: 50%;
+    padding: 0.8em;
+    margin-right: 0.4em;
+  }
+
+
+  /* Gestion des couleurs */
+  /* On récupère les variables définies plus haut pour reprendre les mêmes couleurs*/
+  #first-color {
+    background-color: var(--first-color-basic);
+  }
+  #second-color {
+    background-color: var(--second-color-basic);
+  }
+  
+  /* Au survol, on met les couleurs plus foncées*/
+  #first-color :hover {
+    background-color: var(--first-color-dark);
+  }
+  #second-color:hover {
+    background-color: var(--second-color-dark);
+  }
+  
+  .second__menu {
+    text-align: center;
+    color:  var(--color-dark);
+  }
+  
+  .second__menu__item {
+    padding: 1em;
+    display: inline-block;
+  }
+  
+  .current--menu {
+    border-bottom: 2px solid var(--color-dark); /* Ajout d'une bordure sur l'onglet séléctionné*/
+    font-weight: bold;
+  }
+  
+  /*** content */
+
+  .content {
+    padding: 2em;
+  }
+  
+   /*Intro slider*/
+  .intro__content__title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* Sections elements*/
+  .main__part {
+    padding: 1em;
+    background-color: var(--color-opacity);
+  }
+  
+
+  .main__part__title{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin-top:2em;
+    color: var(--color-dark);
+    border-bottom: 1px solid var(--color-dark); 
+
+  }
+
+  .main__part__subtitle {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+    font-style: italic;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card__title {
+    margin: 0.5rem 0;
+    font-weight: bold;
+  }
+  
+  .card__action {
+    display: flex;
+    margin:auto;
+    margin-top: 1rem;
+  }
+
+  .legende{
+    color:#aaa;
+    font-size: 0.9em;
+  }
+  
+  .card__action .button {
+    margin-right: 0.25rem;
+  }
+
+  .tags{
+    font-size: 0.8em;
+    margin-top:0.9em;
+    margin-left: auto;
+  }
+
+  /* About */
+  
+  .card__about{
+    padding: 1em;
+    width: 100%;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card__image__container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__image__element{
+    width: 100%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin: auto;
+  
+  }
+
+  .about__title{
+    color:var(--color-dark);
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+  
+  .about__desc{
+    margin-bottom: 1em;
+  }
+  
+  .text-bold{
+    font-weight: bold;
+  }
+
+  /*** slider */
+  .slider {
+    position: relative; /*Occupe espace container*/
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #slider__buttons {
+    padding-bottom: 10em;
+  }
+  
+  .slider__title{
+    z-index: 2;
+    position: relative;
+    margin-bottom: 5.8em;
+    padding:0.5em;
+  }
+  
+  .slider__img {
+    position: absolute; /*Remplit element slider*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  
+  .slider__img--current {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  #slider__buttons{
+    z-index: 2; /* permet d'être en premier plan */
+    position: relative;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .slider__title{
+    display:none;
+  }
+
+  .slider__title--current {
+    display:inline-block;
+    opacity: 1;
+    z-index: 2;
+    font-size: 1.5em;
+    text-align: right;
+    color:rgb(0, 0, 0);
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+  }
+
+  /*** newletter */
+  
+  .newsletter {
+    position: fixed;
+    z-index: 9;
+    background-color: var(--color-bg);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-basic);
+    padding: 2.5em;
+    width: 22em;
+    max-width: 100%;
+    display: none;
+    /*To center the element*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .newsletter--on {
+    display: block;
+  }
+  
+  
+  .newsletter__title {
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: left;
+  }
+
+  .newsletter__text{
+    font-style: italic;
+    font-size: 0.9em;
+    padding-bottom: 0.5em;
+    text-align: left;
+  }
+  
+  .newsletter__field {
+    border: 1px solid var(--color-basic);
+    padding: 0.25rem;
+    border-radius: 5px;
+  }
+  
+  .newsletter__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  
+  /* bottom */
+
+  .social__medias{
+    text-align: center;
+  }
+
+  .social__medias__link{
+    color: var(--color-basic);
+    font-size: 1.6em;
+  }
+
+  .footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .social__link{
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  
+  .social__link:hover{
+    font-weight: bold;
+    color:white;
+  }
+  
+  /*** dark mode */
+  /*Quand on passe au mode dark, on modifie les couleurs des différents éléments du site pour qu'elles soient plus claires*/
+  /*On définit de nouvelles variables contenant ces couleurs*/
+  .mode-dark, .mode-dark {
+    color: white;
+    background-color: #222;
+    --color-bg: #222;
+    --color-opacity: rgb(205 205 205 / 10%);
+  }
+  
+  /*** colors mode */
+  /* A l'évenement click, le classe du body passe de first-color à second-color
+  Tous les éléments définis avec color-basic et color-dark s'adaptent alors*/
+  .first-color {
+    --color-basic: var(--first-color-basic);
+    --color-dark: var(--first-color-dark);
+  }
+  .second-color {
+    --color-basic: var(--second-color-basic);
+    --color-dark: var(--second-color-dark);
+  }
+  
+  /*** responsive */
+  /*A partir du smartphone et jusqu'à la tablette*/
+  @media screen and (min-width: 425px) {
+    /*On affiche deux articles par ligne, en laissant une petite marge*/
+    .card {
+      width: calc((100% - 2em) / 2);
+    }
+
+  }
+
+  /*A partir de la tablette*/
+  @media screen and (min-width: 768px) {
+    /*on affiche la photo à gauche*/
+    .card__about{
+      flex-direction: row;
+    }
+    
+    .card__image__element{
+      width: 60%;
+      margin-left:0 5em;
+    }
+
+    .card__body{
+      margin-right: 5em;
+    }
+  }
+
+  /*A partir du laptop*/
+  @media screen and (min-width: 1024px) {
+    /*On affiche deux articles par ligne, en laissant une petite marge*/
+    .card {
+      width: calc((100% - 2em) / 3);
+    }
+  }

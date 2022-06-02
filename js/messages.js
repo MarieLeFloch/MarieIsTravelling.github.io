@@ -16,15 +16,15 @@ const messages = {
         // Et on lui ajoute le contenu avec textContent
         messageElement.textContent = textToDisplay;
         // Puis, on l'ajoute dans le DOM, à l'endroit qui aura été ciblé lors de l'appel de la fonction
-        parentElement.prepend(messageElement);
+        parentElement.append(messageElement);
     },
 
-    removeMessagesFromElmt: function (parentElmt) {
+    removeMessagesFromElmt: function (parentElement) {
         //* 2.Méthode permettant de supprimer un éventuel message déjà présent
 
         // On checke s'il existe déjà la classe .message
         // Pour ça on cible cet éventuel élément
-        const pElement = parentElmt.querySelector(".message");
+        const pElement = parentElement.querySelector(".message");
 
         // Si il est null, c'est qu'il n'y a pas l'élément cherché donc on n'a rien à faire
         if (pElement !== null) {

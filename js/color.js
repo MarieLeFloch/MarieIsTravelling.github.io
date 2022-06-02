@@ -35,7 +35,7 @@ const color = {
 
         //* Classe de <body>
         // Supression de la classe déjà placée sur la balise body
-        document.body.classList.remove("color-blue", "color-green");
+        document.body.classList.remove("first-color", "second-color");
 
         // Et ajout de l'id du bouton qui a subi l'événement en tant que nouvelle classe du body
         document.body.classList.add(color);
@@ -45,7 +45,17 @@ const color = {
     changeMode: function () {
         //* 3. Méthode pour changer le mode (dark / ligth)
 
+        // On ajoute la classe mode-dark à body, dont dépend l'affichage des couleurs sombres
         document.querySelector("body").classList.toggle("mode-dark");
+        // On ajoute ou on retire off à la classe de l'icone
+        document.querySelector(".switch-icon").classList.toggle("bi-lightbulb");
+        document.querySelector(".switch-icon").classList.toggle("bi-lightbulb-off");
+        // On modifie la classe du "logo", celui-ci étant affiché si --on, caché si --off
+        document.querySelector(".logo__image__black").classList.toggle("logo--on");
+        document.querySelector(".logo__image__white").classList.toggle("logo--on");
+        document.querySelector(".logo__image__black").classList.toggle("logo--off");
+        document.querySelector(".logo__image__white").classList.toggle("logo--off");
+
 
     },
 }
