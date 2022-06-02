@@ -206,7 +206,7 @@ html {
     margin-left: auto;
   }
 
-  /* About */
+  /*** About */
   
   .card__about{
     padding: 1em;
@@ -304,6 +304,38 @@ html {
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
   }
+
+  /*** Tips */
+  .tip__title{
+    /* Titre interpreté comme cliquable*/
+    cursor: pointer;
+    font-size: 1.1em;
+    background-color: var(--color-basic);
+    padding: 0.4em 0em;
+
+  }
+  .tip__arrow {
+    float: right;
+    padding-right: 0.1em;
+  }
+
+  .tip__arrow__first{
+    transform: rotate(90deg)
+  }
+
+  /*Contenu caché par défaut*/
+  .tip__text{
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  /*Quand ajout classe "open", on montre le contenu*/
+  .open + .tip__text {
+    max-height: 400px;
+    padding: 1em 0em 2em 0em;
+    transition: max-height 0.8s ease; /*Ouverture progressive entière*/
+
+}
 
   /*** newletter */
   

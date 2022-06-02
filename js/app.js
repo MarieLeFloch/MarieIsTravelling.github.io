@@ -15,6 +15,8 @@ const app = {
         }
         //* Le module gérant les articles (qui fait lui même appel au module messages)
         trips.init();
+        // Le module gérant l'accordéon des tips
+        tips.init();
     },
 };
 
