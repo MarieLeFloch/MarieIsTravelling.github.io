@@ -25,13 +25,13 @@ const tips = {
 
         const responseAlreadyOpen = document.querySelector(".open");
         responseAlreadyOpen.classList.remove("open");
-        console.log(responseAlreadyOpen);
+        //console.log(responseAlreadyOpen);
 
         // ET on affiche le contenu du titre cliqué
         // On ajoute la class open
 
         const titleButtonClicked = event.currentTarget;
-        console.log(titleButtonClicked);
+        //console.log(titleButtonClicked);
         titleButtonClicked.classList.add("open");
         //console.log(titleButtonClicked);
 
