@@ -313,11 +313,13 @@ html {
     font-size: 1.1em;
     background-color: var(--color-basic);
     padding: 0.4em 0em;
+    padding-right:0.2em;
+    color: white;
+    border: 1px solid white;
 
   }
   .tip__arrow {
     float: right;
-    padding-right: 0.1em;
   }
 
   .tip__arrow__first{

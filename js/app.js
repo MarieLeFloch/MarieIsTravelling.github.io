@@ -6,7 +6,12 @@ const app = {
         //* Le module gérant les couleurs : dark / light et bleu / vert
         color.init();
         //* Le module gérant la newsletter
-        newsletter.init();
+        // On l'active juste à la première page
+        let firstPage = document.querySelector(".presentation");
+        if (firstPage){
+            newsletter.init();
+        }
+        // newsletter.init();
         //* Le module gérant le slider
         // On ne le charge que s'il y a un slider dans la page courante
         let sliderExists = document.querySelector(".slider");

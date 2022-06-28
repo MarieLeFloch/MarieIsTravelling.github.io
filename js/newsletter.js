@@ -33,7 +33,7 @@ const newsletter = {
         window.addEventListener("scroll", newsletter.handleScroll);
 
         // Au bout de 5 secondes, si la newsletter n'a pas été appelée avant via handleScroll, on appelle quand même la méthode display ci-dessous
-        setTimeout(newsletter.display, 5000);
+        //setTimeout(newsletter.display, 5000);
     },
 
     handleScroll: function () {
